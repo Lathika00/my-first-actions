@@ -1,0 +1,17 @@
+name: Greet User Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Enter your name'
+        required: true
+        default: 'Developer'
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print a greeting
+        run: echo "Hello, ${{ github.event.inputs.name }}! 👋 Welcome to GitHub Actions!"
